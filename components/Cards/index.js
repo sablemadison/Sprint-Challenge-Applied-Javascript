@@ -17,3 +17,34 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const promise2 = axios.get('https://lambda-times-backend.herokuapp.com/articles');
+
+promise2
+.then(function (response2) {
+    console.log(response2);
+})
+.catch(function (error2) {
+    console.log(error2);
+});
+
+const cardsComponent = document.querySelector('.cards-container')
+function componentFunction (cardData) {
+//possibly add for each to iterate over articles and create a card for each one or find a different way to create more cards
+    const card = document.createElement('div');
+
+const headline = document.createElement('div');
+headline.textContent = '${cardData.headline}';
+card.appendChild(headline);
+
+const image = document.createElement('img');
+image.setAttribute('${cardData.authorPhoto}')
+card.appendChild('image');
+
+const authorName = document.createElement('span');
+authorName.textContent = '${cardData.authorName}';
+card.appendChild(authorName);
+
+cardsContainer.appendChild(card);
+}
+
+cardsComponent()

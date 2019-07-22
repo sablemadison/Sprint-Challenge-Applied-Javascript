@@ -31,4 +31,4 @@ data.appendChild(div);
 
 }
 
-tabComponent(response.topics) //pass array (topics) into function as argument --->
+tabComponent(data.topics) //pass array (topics) into function as argument --->
