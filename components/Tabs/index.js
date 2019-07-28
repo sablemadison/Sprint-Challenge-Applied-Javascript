@@ -11,24 +11,57 @@
 const promise = axios.get('https://lambda-times-backend.herokuapp.com/topics');
 
 promise
-.then(function (response) {
-    console.log(response);
+.then((axiosData) => {
+console.log(axiosData);
+const tabsData = axiosData.data.topics;
+const topics = document.querySelector('.topics');
+
+tabsData.forEach(tab => {
+    topics.appendChild(createTab(tab))
+    
 })
-.catch(function (error) {
-    console.log(error);
-});
+})
+.catch((requestFail) => {
+console.log('The request failed', requestFail);
 
-function tabComponent (tabsArray) {
-    const data = document.querySelector('topics');
-    data.forEach(function (tabs) {
-        const div = document.createElement('div');
-        div.classList.add(tab);
-        div.textContent = 'topic here';
-data.appendChild(div);
-        
-    })
+})
 
+function createTab (tabTopic) {
+const newTab = document.createElement('div');
 
+newTab.classList.add('tab');
+newTab.textContent = tabTopic;
+return newTab;
 }
 
-tabComponent(data.topics) //pass array (topics) into function as argument --->
+// promise
+// .then(topicsObject =>  {
+//    topicsObject = topicsObject.data.promise;
+//     console.log(topicsObject)
+//    const topics = document.querySelector('.topics')
+//    for(let i = 0; i < topicsObject.length; i++ ){
+//        topics.appendChild(topicsObject.data.promise);
+//    }
+// })
+// .catch(error =>  {
+//     console.log(error);
+// });
+
+
+
+// function tabComponent (tabTopic) {
+//     const tab = document.createElement('div');
+    
+//     tab.classList.add('tab');
+
+//     tab.textContent = tabTopic;
+
+//     return tab;
+// }
+
+
+
+
+
+
+

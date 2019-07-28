@@ -9,27 +9,32 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header(data) {
-    const contentDiv =  document.createElement('div');
-contentDiv.classList.add('header');
 
-const dateSpan = document.createElement('span');
-dateSpan.classList.add('date');
-dateSpan.textContent = 'SMARCH 28, 2019';
-contentDiv.appendChild(dateSpan)
 
-const tempSpan = document.createElement('span');
-tempSpan.textContent = '98°';
-contentDiv.appendChild(tempSpan);
+function headerComponent () {
+    const pageHeader = document.querySelector('.header-container');
+    
+    const header = document.createElement('div');
+    header.classList.add('header');
 
-const headerContainer = document.querySelector('.headerContainer')
-headerContainer.appendChild(contentDiv);
+    const date = document.createElement('span');
+    date.classList.add('date');
+    date.textContent = 'SMARCH 28, 2019';
+
+    const h1 = document.createElement('h1');
+    h1.textContent = 'LambdaTimes';
+    const temp = document.createElement('span');
+    temp.classList.add('temp');
+    temp.textContent = '98°';
+
+    header.appendChild(date)
+    header.appendChild(h1)
+    header.appendChild(temp)
+    pageHeader.appendChild(header);
+
 }
 
+headerComponent()
 
 
-// 1. Div with a class of Header
-// 2. Span with a class of date and text content
-// 3. H1 with text content
-// 4. span with a class of temp and text content
-// 5. add it to the DOM in the .headerContainer component
+
