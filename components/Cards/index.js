@@ -37,7 +37,19 @@ promise2
 
             articles.technology.forEach(card => {
                 Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+
+                
             })
+
+            articles.jquery.forEach(card => {
+                Cards.appendChild(createCard(
+                    card.headline, card.authorPhoto, card.authorName))
+                })
+
+                articles.javascript.forEach(card => {
+                    Cards.appendChild(createCard(
+                        card.headline, card.authorPhoto, card.authorName))
+                    })
   
 })
 .catch((requestFail2) => {
