@@ -30,14 +30,19 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+*A depiction of your code content and styling as interpreted by the browser.
 2. What is an event?
 
+*An event is any interaction the user has with your web page.
 3. What is an event listener?
 
+*An event listener is a piece of code that listens for a specfic to event to occur on a certiain element and then it calls a callback function in response to it.
 4. Why would we convert a NodeList into an Array?
 
+*If we aren't satisfied with forEach or we need to use other methods on our elements, we can convert them to an array so that we have more options.
 5. What is a component?
 
+*A component is a reusable, independent piece of code. It helps to keep code dry because it can be used to create many elements with similar style and function and it negates the need for us to repeat ourselves. 
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
