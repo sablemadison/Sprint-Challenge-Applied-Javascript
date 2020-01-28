@@ -24,6 +24,11 @@
 // axios GET call
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then( response => {console.log('response:', response)
+
+//headlines
+newCard.textContent = response.data.articles.javascript[0].headline
+
+
 })
 .catch(error => { console.log('error:', error)
 })
@@ -53,11 +58,7 @@ function Card (headline, url, author) {
     cardDiv.appendChild(imgDiv)
 
    cardDiv.appendChild(authorDiv)
-
-   // add content
-   headlineDiv.textContent = headline;
-   imgSrc.src = url;
-   authorSpan.textContent= author;
+   cardDiv.appendChild(authorSpan)
 
 
 
@@ -65,6 +66,11 @@ function Card (headline, url, author) {
    
 
 }
-
+//append new card to DOM
 const parent = document.querySelector('.cards-container')
+
+const newCard = Card()
+
+parent.appendChild(newCard)
+
 
